@@ -1,0 +1,107 @@
+header{
+    height: 6rem;
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+header .header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+header .header_logo{
+    flex: 1;
+    font-size: 1.6rem;
+}
+
+header .header_logo h1{
+    font-weight: 300;
+    color: var(--hover-color);
+}
+
+header .header_nav{
+    flex: 4;
+}
+
+header .header_nav .header_nav_links{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+header .header_nav .header_nav_link {
+    padding: 2rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: 0.3s;
+}
+
+header .header_nav_link a{
+    color: rgba(255, 255, 255, 0.829);
+}
+
+/* header .header_nav_link:hover {
+    background-color: #8f0e0ee0;
+    transition: 0.3s;
+} */
+
+header .header_nav_link:hover a {
+    display: block;
+    transform: scale(1.1);
+    color: var(--hover-color);
+}
+
+header .header_search_container{
+    flex: 2;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .header_search_container .header_search{
+    flex: 1;
+    background-color: var(--background-secondary);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+header .header_search input{
+    padding: 1rem 0rem 1rem 2rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1.8rem;
+    background-color: transparent;
+    flex: 9;
+    cursor: pointer;
+}
+
+header .header_search .icon_search {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #4b4a4ad5;
+    height: 4.1rem;
+    line-height: 4.1rem;
+}
+
+header .header_search .icon_search:hover{
+    background-color: var(--hover-color);
+    color: #000000e3;
+}
+
+@media (max-width: 1000px) {
+    header .header_search {
+        flex: 1;
+    }
+
+    header .header_search input{
+        display: none;
+    }
+}

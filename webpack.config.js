@@ -1,21 +1,18 @@
-
-import MiniCssExtractPlugin, { loader } from "mini-css-extract-plugin";
-
-export const mode = "development";
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const devMode = process.env.NODE_ENV !== "production";
 
-export const module = {
+module.exports = {
+  mode: "development",
+  module: {
     rules: [
-        {
-            test: /\.(sa|sc|c)ss$/i,
-            use: [
-                devMode ? "style-loader" : loader,
-                "css-loader",
-                "postcss-loader",
-                "sass-loader",
-            ],
-        },
+      {
+        test: /\.(sa|sc|c)ss$/i,
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
+      },
     ],
+  },
+  plugins: [].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
 };
-export const plugins = [].concat(devMode ? [] : [new MiniCssExtractPlugin()]);
